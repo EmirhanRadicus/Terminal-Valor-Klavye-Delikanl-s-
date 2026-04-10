@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnternet Şubesi | Ayman Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Ayman<span>Bankası</span></h1>
+            </div>
+            <nav>
+                <ul class="user-menu">
+                    <li><span class="user-name">Hoş Geldiniz</span></li>
+                    <li><a href="index.html" class="btn-logout">Çıkış Yap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container dashboard-layout">
+        <aside class="sidebar">
+            <ul>
+                <li class="active"><a href="#">Varlıklarım</a></li>
+                <li><a href="#">Para Transferleri</a></li>
+                <li><a href="#">Kartlarım</a></li>
+                <li><a href="#">Ödemeler</a></li>
+                <li><a href="#">Yatırım İşlemleri</a></li>
+                <li><a href="#">Ayarlar</a></li>
+            </ul>
+        </aside>
+
+        <main class="dashboard-content">
+            <div class="balance-card">
+                <div class="balance-info">
+                    <h3>Vadesiz TL Hesabı</h3>
+                    <p class="iban">TR56 0006 1000 0000 1234 5678 90</p>
+                </div>
+                <div class="balance-amount">
+                    <h2>42.500,00 <span>TL</span></h2>
+                    <p>Kullanılabilir Bakiye</p>
+                </div>
+            </div>
+
+            <div class="balance-card secondary-card">
+                <div class="balance-info">
+                    <h3>Yatırım Hesabı</h3>
+                    <p class="iban">Hisse & Fon Portföyü</p>
+                </div>
+                <div class="balance-amount">
+                    <h2>115.340,50 <span>TL</span></h2>
+                </div>
+            </div>
+
+            <div class="transactions">
+                <h3>Son İşlemler</h3>
+                <div class="transaction-item">
+                    <div class="t-details">
+                        <strong>Netflix Teknoloji Hiz.</strong>
+                        <span>10 Nisan 2026</span>
+                    </div>
+                    <div class="t-amount negative">-229,99 TL</div>
+                </div>
+                <div class="transaction-item">
+                    <div class="t-details">
+                        <strong>Maaş Ödemesi</strong>
+                        <span>01 Nisan 2026</span>
+                    </div>
+                    <div class="t-amount positive">+35.000,00 TL</div>
+                </div>
+                <div class="transaction-item">
+                    <div class="t-details">
+                        <strong>Kredi Kartı Borç Ödeme</strong>
+                        <span>28 Mart 2026</span>
+                    </div>
+                    <div class="t-amount negative">-4.250,00 TL</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
