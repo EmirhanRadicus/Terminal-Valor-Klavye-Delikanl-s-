@@ -1,0 +1,296 @@
+/* ============================================
+   TERMINAL — Hacker terminal emulator
+   ============================================ */
+
+.terminal-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0a0a0e;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* --- Terminal Output Area --- */
+.terminal-output {
+  flex: 1;
+  padding: 12px 14px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #a0b4a0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.terminal-output .term-line {
+  margin-bottom: 2px;
+}
+
+.terminal-output .term-line.cmd-input {
+  color: #d0e0d0;
+}
+
+.terminal-output .term-line.cmd-output {
+  color: #8a9a8a;
+}
+
+.terminal-output .term-line.cmd-error {
+  color: #ff6666;
+}
+
+.terminal-output .term-line.cmd-success {
+  color: #00ff88;
+}
+
+.terminal-output .term-line.cmd-warning {
+  color: #ffaa44;
+}
+
+.terminal-output .term-line.cmd-info {
+  color: #44aaff;
+}
+
+.terminal-output .term-line.cmd-system {
+  color: #666;
+  font-style: italic;
+}
+
+/* --- Prompt Styling --- */
+.term-prompt {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.term-prompt .prompt-user {
+  color: #00cc66;
+}
+
+.term-prompt .prompt-at {
+  color: #666;
+}
+
+.term-prompt .prompt-host {
+  color: #00aaff;
+}
+
+.term-prompt .prompt-colon {
+  color: #666;
+}
+
+.term-prompt .prompt-path {
+  color: #aa88ff;
+}
+
+.term-prompt .prompt-symbol {
+  color: #00ff88;
+  margin-right: 6px;
+}
+
+/* --- Input Line --- */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-top: 1px solid rgba(0, 255, 136, 0.06);
+  background: rgba(0, 0, 0, 0.3);
+  min-height: 38px;
+}
+
+.terminal-input-line .term-prompt {
+  flex-shrink: 0;
+  margin-right: 0;
+}
+
+.terminal-input-line input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #d0e0d0;
+  font-family: 'Courier New', 'Consolas', monospace;
+  font-size: 13px;
+  caret-color: #00ff88;
+  padding: 0;
+}
+
+.terminal-input-line input::placeholder {
+  color: #2a3a2a;
+}
+
+/* --- ASCII Art / Banner --- */
+.terminal-banner {
+  color: #00ff88;
+  opacity: 0.7;
+  margin-bottom: 12px;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+/* --- Progress Bar (in terminal) --- */
+.term-progress {
+  display: inline-block;
+  width: 200px;
+  height: 10px;
+  background: rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  margin: 4px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.term-progress .term-progress-fill {
+  height: 100%;
+  background: #00ff88;
+  transition: width 0.3s ease;
+}
+
+/* --- Table Output --- */
+.term-table {
+  border-collapse: collapse;
+  margin: 6px 0;
+  font-size: 12px;
+}
+
+.term-table th {
+  color: #00aaff;
+  text-align: left;
+  padding: 2px 16px 2px 0;
+  border-bottom: 1px solid rgba(0, 170, 255, 0.2);
+}
+
+.term-table td {
+  padding: 2px 16px 2px 0;
+  color: #8a9a8a;
+}
+
+.term-table tr:hover td {
+  color: #b0c0b0;
+}
+
+/* --- Hack Output Styling --- */
+.term-hack-header {
+  color: #ff4444;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(255, 68, 68, 0.2);
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.term-hack-step {
+  color: #aaa;
+  padding-left: 4px;
+}
+
+.term-hack-step::before {
+  content: '▸ ';
+  color: #ffaa44;
+}
+
+.term-hack-result {
+  margin-top: 6px;
+  padding: 6px 8px;
+  border-left: 3px solid #00ff88;
+  background: rgba(0, 255, 136, 0.03);
+}
+
+.term-hack-result.failed {
+  border-left-color: #ff4444;
+  background: rgba(255, 68, 68, 0.03);
+}
+
+/* --- Mini-game styling (log wiper) --- */
+.mini-game-container {
+  margin: 8px 0;
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 170, 0, 0.3);
+  background: rgba(255, 170, 0, 0.03);
+  border-radius: 4px;
+}
+
+.mini-game-timer {
+  color: #ffaa00;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.mini-game-target {
+  color: #00aaff;
+  padding: 4px 8px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* --- Terminal Autocomplete Dropdown --- */
+.terminal-input-line {
+  position: relative;
+}
+
+.term-autocomplete {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  max-height: 200px;
+  overflow-y: auto;
+  background: rgba(20, 20, 30, 0.98);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 10;
+}
+
+.term-autocomplete.visible {
+  display: block;
+}
+
+.term-ac-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: background 0.08s ease;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 12px;
+}
+
+.term-ac-item:hover,
+.term-ac-item.selected {
+  background: rgba(0, 255, 136, 0.08);
+}
+
+.term-ac-item .ac-cmd {
+  color: #00ff88;
+  font-weight: 500;
+  min-width: 100px;
+}
+
+.term-ac-item .ac-match {
+  color: #fff;
+  font-weight: 700;
+}
+
+.term-ac-item .ac-desc {
+  color: #5a5e64;
+  font-size: 11px;
+  flex: 1;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.term-ac-item .ac-type {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  background: rgba(0, 170, 255, 0.1);
+  color: #00aaff;
+  flex-shrink: 0;
+}
+

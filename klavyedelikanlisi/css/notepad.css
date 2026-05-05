@@ -1,0 +1,164 @@
+/* ============================================
+   NOTEPAD — Simple text editor
+   ============================================ */
+
+.notepad-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #0e0e14;
+}
+
+/* --- Tab Bar --- */
+.notepad-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(12, 12, 18, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0 4px;
+  overflow-x: auto;
+  min-height: 34px;
+}
+
+.notepad-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: #6a6e74;
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+  transition: all 0.12s ease;
+  white-space: nowrap;
+  position: relative;
+}
+
+.notepad-tab:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: #a0a4a8;
+}
+
+.notepad-tab.active {
+  background: rgba(16, 16, 24, 1);
+  color: #d0d4d8;
+  border-bottom: 2px solid #00ff88;
+}
+
+.notepad-tab .tab-modified {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffaa44;
+  flex-shrink: 0;
+}
+
+.notepad-tab .tab-close {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  font-size: 10px;
+  color: #5a5e64;
+  opacity: 0;
+  transition: all 0.12s ease;
+}
+
+.notepad-tab:hover .tab-close {
+  opacity: 1;
+}
+
+.notepad-tab .tab-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ff6666;
+}
+
+.notepad-tab-add {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4a4e54;
+  border-radius: 4px;
+  margin-left: 4px;
+  transition: all 0.12s ease;
+  flex-shrink: 0;
+}
+
+.notepad-tab-add:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #8a8e94;
+}
+
+/* --- Editor Area --- */
+.notepad-editor {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.notepad-line-numbers {
+  width: 48px;
+  padding: 12px 8px;
+  text-align: right;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: #2a2e34;
+  background: rgba(8, 8, 12, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.notepad-textarea {
+  flex: 1;
+  padding: 12px 14px;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #c8ccd0;
+  background: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  caret-color: #00ff88;
+  tab-size: 4;
+  white-space: pre;
+  overflow: auto;
+}
+
+.notepad-textarea::placeholder {
+  color: #2a2e34;
+}
+
+/* --- Status Bar --- */
+.notepad-statusbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 14px;
+  background: rgba(12, 12, 18, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 11px;
+  color: #5a5e64;
+  min-height: 24px;
+}
+
+.notepad-statusbar .status-left {
+  display: flex;
+  gap: 16px;
+}
+
+.notepad-statusbar .status-right {
+  display: flex;
+  gap: 16px;
+}
+
+.notepad-statusbar .saved-indicator {
+  color: #00ff88;
+}

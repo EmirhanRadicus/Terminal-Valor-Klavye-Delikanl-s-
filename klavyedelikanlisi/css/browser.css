@@ -1,0 +1,248 @@
+/* ============================================
+   BROWSER — In-game web browser
+   ============================================ */
+
+/* --- Full-height flex wrapper --- */
+#content-browser {
+  overflow: hidden;
+}
+
+.browser-app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.browser-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(14, 14, 22, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.browser-nav-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  color: #6a6e74;
+  font-size: 14px;
+  transition: all 0.12s ease;
+  flex-shrink: 0;
+}
+
+.browser-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #a0a4a8;
+}
+
+.browser-nav-btn.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.browser-url-bar {
+  flex: 1;
+  height: 30px;
+  padding: 0 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 15px;
+  color: #c0c4c8;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+  transition: border-color 0.15s ease;
+}
+
+.browser-url-bar:focus {
+  border-color: rgba(0, 255, 136, 0.3);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.browser-url-bar::placeholder {
+  color: #4a4e54;
+}
+
+.browser-loading-bar {
+  height: 2px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.browser-loading-bar.loading {
+  background: rgba(0, 255, 136, 0.1);
+}
+
+.browser-loading-bar.loading::after {
+  content: '';
+  position: absolute;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: #00ff88;
+  animation: loadingSlide 1.2s ease-in-out infinite;
+}
+
+@keyframes loadingSlide {
+  0% { left: -30%; }
+  100% { left: 100%; }
+}
+
+/* --- Browser Viewport --- */
+.browser-viewport {
+  flex: 1;
+  background: #0c0c14;
+  position: relative;
+  overflow: hidden;
+}
+
+.browser-viewport iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #ffffff;
+}
+
+/* --- Browser Error Page --- */
+.browser-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.browser-error .error-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  opacity: 0.4;
+}
+
+.browser-error .error-title {
+  font-size: 18px;
+  color: #8a8e94;
+  margin-bottom: 8px;
+}
+
+.browser-error .error-msg {
+  font-size: 13px;
+  color: #5a5e64;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* --- Bookmarks Bar --- */
+.browser-bookmarks {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 10px;
+  background: rgba(14, 14, 22, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  overflow-x: auto;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: #7a7e84;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.bookmark-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #b0b4b8;
+}
+
+.bookmark-item .bm-icon {
+  font-size: 12px;
+}
+
+/* --- Browser Home Page --- */
+.browser-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 40px;
+  background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.02) 0%, transparent 70%);
+}
+
+.browser-home .home-title {
+  font-size: 28px;
+  font-weight: 300;
+  color: #3a3e44;
+  letter-spacing: 8px;
+  margin-bottom: 24px;
+}
+
+.browser-home .home-search {
+  width: 100%;
+  max-width: 480px;
+  height: 40px;
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  color: #c0c4c8;
+  font-size: 14px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.browser-home .home-search:focus {
+  border-color: rgba(0, 255, 136, 0.2);
+}
+
+.browser-home .home-shortcuts {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home-shortcut {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.home-shortcut:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 255, 136, 0.15);
+  transform: translateY(-2px);
+}
+
+.home-shortcut .sc-icon {
+  font-size: 22px;
+}
+
+.home-shortcut .sc-label {
+  font-size: 10px;
+  color: #6a6e74;
+}

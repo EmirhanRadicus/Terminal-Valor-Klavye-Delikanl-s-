@@ -1,0 +1,90 @@
+/* HedefBank — Professional Banking Site Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', 'Segoe UI', sans-serif; background: #0a0f1a; color: #c8d0dc; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* Navbar */
+.navbar { display: flex; align-items: center; justify-content: space-between; padding: 16px 32px; background: rgba(10,15,26,0.95); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(12px); }
+.nav-brand { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 700; color: #fff; }
+.brand-icon { font-size: 24px; }
+.nav-links { display: flex; align-items: center; gap: 24px; }
+.nav-link { font-size: 14px; color: #8896aa; transition: color 0.2s; }
+.nav-link:hover, .nav-link.active { color: #fff; }
+.nav-cta { background: linear-gradient(135deg, #00c471, #00a85e); color: #fff !important; padding: 8px 20px; border-radius: 6px; font-weight: 600; }
+.nav-cta:hover { opacity: 0.9; }
+
+/* Hero */
+.hero { position: relative; padding: 80px 32px 60px; text-align: center; overflow: hidden; }
+.hero-bg-grid { position: absolute; inset: 0; background-image: radial-gradient(rgba(0,196,113,0.06) 1px, transparent 1px); background-size: 40px 40px; }
+.hero-content { position: relative; max-width: 700px; margin: 0 auto; }
+.hero-badge { display: inline-block; padding: 6px 16px; background: rgba(0,196,113,0.1); border: 1px solid rgba(0,196,113,0.2); border-radius: 20px; color: #00c471; font-size: 12px; font-weight: 600; letter-spacing: 1px; margin-bottom: 24px; }
+.hero h1 { font-size: 42px; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 16px; }
+.gradient-text { background: linear-gradient(135deg, #00c471, #00e5ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-desc { font-size: 16px; color: #7a8a9e; max-width: 520px; margin: 0 auto 32px; }
+.hero-buttons { display: flex; gap: 14px; justify-content: center; margin-bottom: 48px; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 12px 28px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: all 0.2s; cursor: pointer; border: none; }
+.btn-primary { background: linear-gradient(135deg, #00c471, #00a85e); color: #fff; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,196,113,0.3); }
+.btn-outline { border: 1px solid rgba(255,255,255,0.15); color: #fff; background: transparent; }
+.btn-outline:hover { background: rgba(255,255,255,0.05); }
+
+/* Stats */
+.hero-stats { display: flex; justify-content: center; gap: 48px; }
+.stat { text-align: center; }
+.stat-num { display: block; font-size: 28px; font-weight: 800; color: #fff; }
+.stat-label { font-size: 12px; color: #5a6a7e; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Features */
+.features { padding: 60px 32px; max-width: 900px; margin: 0 auto; }
+.features h2 { text-align: center; font-size: 28px; color: #fff; margin-bottom: 40px; }
+.features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.feature-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 28px; transition: all 0.2s; }
+.feature-card:hover { border-color: rgba(0,196,113,0.3); transform: translateY(-2px); }
+.feature-icon { font-size: 32px; margin-bottom: 12px; }
+.feature-card h3 { font-size: 16px; color: #fff; margin-bottom: 8px; }
+.feature-card p { font-size: 13px; color: #6a7a8e; }
+
+/* CTA */
+.cta-section { padding: 40px 32px; }
+.cta-card { max-width: 700px; margin: 0 auto; background: linear-gradient(135deg, rgba(0,196,113,0.1), rgba(0,229,255,0.05)); border: 1px solid rgba(0,196,113,0.15); border-radius: 16px; padding: 48px; text-align: center; }
+.cta-card h2 { font-size: 24px; color: #fff; margin-bottom: 12px; }
+.cta-card p { color: #7a8a9e; margin-bottom: 24px; }
+
+/* Footer */
+.footer { padding: 32px; border-top: 1px solid rgba(255,255,255,0.04); margin-top: 40px; }
+.footer-content { max-width: 900px; margin: 0 auto; text-align: center; }
+.footer-brand { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 12px; }
+.footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; }
+.footer-links a { font-size: 12px; color: #5a6a7e; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { font-size: 11px; color: #3a4a5e; }
+
+/* Login Page */
+.login-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 32px; }
+.login-card { width: 100%; max-width: 400px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 40px; }
+.login-card h2 { text-align: center; color: #fff; margin-bottom: 8px; font-size: 22px; }
+.login-subtitle { text-align: center; color: #5a6a7e; font-size: 13px; margin-bottom: 32px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 13px; color: #8896aa; margin-bottom: 6px; font-weight: 500; }
+.form-group input { width: 100%; padding: 12px 16px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; color: #fff; font-size: 14px; outline: none; transition: border 0.2s; }
+.form-group input:focus { border-color: #00c471; }
+.form-group input::placeholder { color: #3a4a5e; }
+.login-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #00c471, #00a85e); color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+.login-btn:hover { box-shadow: 0 4px 16px rgba(0,196,113,0.3); }
+.login-links { text-align: center; margin-top: 20px; font-size: 12px; color: #5a6a7e; }
+.login-links a { color: #00c471; }
+
+/* Accounts Page */
+.accounts-page { padding: 32px; max-width: 900px; margin: 0 auto; }
+.accounts-page h1 { font-size: 28px; color: #fff; margin-bottom: 8px; }
+.accounts-subtitle { color: #5a6a7e; margin-bottom: 32px; }
+.account-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.account-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 24px; }
+.account-card .ac-type { font-size: 12px; color: #00c471; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.account-card h3 { font-size: 18px; color: #fff; margin-bottom: 4px; }
+.account-card .ac-desc { font-size: 13px; color: #6a7a8e; margin-bottom: 16px; }
+.account-card .ac-rate { font-size: 24px; font-weight: 800; color: #fff; }
+.account-card .ac-rate span { font-size: 14px; color: #5a6a7e; font-weight: 400; }
+.account-card .ac-btn { display: inline-block; margin-top: 16px; padding: 10px 20px; background: rgba(0,196,113,0.1); border: 1px solid rgba(0,196,113,0.2); border-radius: 6px; color: #00c471; font-size: 13px; font-weight: 600; cursor: pointer; }

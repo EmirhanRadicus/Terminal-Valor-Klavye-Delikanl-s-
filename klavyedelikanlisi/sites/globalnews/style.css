@@ -1,0 +1,18 @@
+body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fdfdfd; color: #333; }
+header { padding: 20px; background: #e74c3c; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 24px; font-weight: bold; }
+nav a { color: #fff; text-decoration: none; margin-left: 15px; font-weight: 500; }
+main { max-width: 1000px; margin: 0 auto; padding: 20px; }
+.breaking { padding: 10px; background: #fce4ec; border-left: 4px solid #e91e63; margin-bottom: 20px; font-weight: 500; }
+.badge { background: #e91e63; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; margin-right: 10px; }
+.hero-article { background: #fff; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden; margin-bottom: 20px; }
+.hero-img { height: 300px; background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000') center/cover; }
+.hero-article h2, .hero-article p { padding: 0 20px; }
+.hero-article h2 { margin-top: 20px; color: #2c3e50; }
+.hero-article p { color: #555; line-height: 1.6; }
+.read-more { display: inline-block; margin: 0 20px 20px; color: #e74c3c; text-decoration: none; font-weight: 600; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+article { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+article h3 { font-size: 16px; margin-top: 0; color: #2c3e50; }
+article p { font-size: 14px; color: #666; }
+footer { text-align: center; padding: 20px; background: #f1f2f6; color: #7f8c8d; font-size: 12px; margin-top: 40px; }
