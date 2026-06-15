@@ -1,0 +1,48 @@
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter','Segoe UI',sans-serif; background:#080c14; color:#b0b8c8; line-height:1.6; }
+a { text-decoration:none; color:inherit; }
+.mc-nav { display:flex; align-items:center; justify-content:space-between; padding:16px 32px; background:rgba(8,12,20,0.95); border-bottom:1px solid rgba(255,255,255,0.05); position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+.mc-brand { font-size:20px; font-weight:700; color:#fff; }
+.mc-links { display:flex; gap:24px; font-size:14px; }
+.mc-links a { color:#6a7a90; transition:color 0.2s; }
+.mc-links a:hover,.mc-links a.active { color:#fff; }
+.mc-hero { padding:80px 32px 50px; text-align:center; background:radial-gradient(ellipse at center,rgba(99,102,241,0.06) 0%,transparent 70%); }
+.mc-hero-inner { max-width:700px; margin:0 auto; }
+.mc-tag { display:inline-block; padding:6px 16px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.2); border-radius:20px; color:#818cf8; font-size:11px; font-weight:600; letter-spacing:1px; margin-bottom:24px; }
+.mc-hero h1 { font-size:40px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:16px; }
+.mc-accent { background:linear-gradient(135deg,#818cf8,#6366f1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+.mc-hero p { color:#6a7a90; font-size:16px; max-width:500px; margin:0 auto 32px; }
+.mc-btns { display:flex; gap:14px; justify-content:center; }
+.mc-btn { padding:12px 28px; border-radius:8px; font-size:14px; font-weight:600; transition:all 0.2s; }
+.mc-btn.primary { background:linear-gradient(135deg,#6366f1,#4f46e5); color:#fff; }
+.mc-btn.primary:hover { box-shadow:0 4px 20px rgba(99,102,241,0.3); }
+.mc-btn.outline { border:1px solid rgba(255,255,255,0.12); color:#fff; }
+.mc-numbers { display:flex; justify-content:center; gap:48px; padding:40px 32px; border-top:1px solid rgba(255,255,255,0.04); border-bottom:1px solid rgba(255,255,255,0.04); }
+.mc-num { text-align:center; }
+.mc-num strong { display:block; font-size:28px; color:#fff; }
+.mc-num span { font-size:12px; color:#5a6a7e; text-transform:uppercase; letter-spacing:1px; }
+.mc-services { padding:60px 32px; max-width:900px; margin:0 auto; }
+.mc-services h2 { text-align:center; font-size:26px; color:#fff; margin-bottom:36px; }
+.mc-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.mc-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:28px; transition:all 0.2s; }
+.mc-card:hover { border-color:rgba(99,102,241,0.3); transform:translateY(-2px); }
+.mc-card-icon { font-size:32px; margin-bottom:12px; }
+.mc-card h3 { font-size:16px; color:#fff; margin-bottom:8px; }
+.mc-card p { font-size:13px; color:#5a6a7e; }
+.mc-footer { padding:32px; border-top:1px solid rgba(255,255,255,0.04); text-align:center; margin-top:40px; }
+.mc-footer-brand { font-size:16px; font-weight:700; color:#fff; margin-bottom:10px; }
+.mc-footer-links { font-size:12px; color:#5a6a7e; margin-bottom:8px; }
+.mc-footer-links a:hover { color:#fff; }
+.mc-footer-copy { font-size:11px; color:#3a4a5e; }
+.mc-page { padding:32px; max-width:900px; margin:0 auto; }
+.mc-page h1 { font-size:28px; color:#fff; margin-bottom:8px; }
+.mc-page .subtitle { color:#5a6a7e; margin-bottom:32px; }
+.service-detail { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:24px; margin-bottom:20px; }
+.service-detail h3 { color:#fff; font-size:18px; margin-bottom:8px; }
+.service-detail p { color:#6a7a8e; font-size:14px; }
+.service-detail .price { color:#818cf8; font-weight:700; margin-top:12px; }
+.job-listing { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:12px; padding:20px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; }
+.job-listing h3 { color:#fff; font-size:15px; margin-bottom:4px; }
+.job-listing .dept { font-size:12px; color:#818cf8; }
+.job-listing .loc { font-size:12px; color:#5a6a7e; }
+.job-apply { padding:8px 20px; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.2); border-radius:6px; color:#818cf8; font-size:13px; font-weight:600; cursor:pointer; }

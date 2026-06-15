@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>HedefBank — Giriş</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-brand"><span class="brand-icon">🏦</span><span class="brand-text">HedefBank</span></div>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Ana Sayfa</a>
+      <a href="hesaplar.html" class="nav-link">Hesaplar</a>
+      <a href="login.html" class="nav-link active nav-cta">Giriş Yap</a>
+    </div>
+  </nav>
+  <div class="login-container">
+    <div class="login-card">
+      <h2>🏦 Hesabınıza Giriş Yapın</h2>
+      <p class="login-subtitle">Dijital bankacılık platformuna hoş geldiniz</p>
+      <form onsubmit="return false;">
+        <div class="form-group">
+          <label>Müşteri Numarası</label>
+          <input type="text" placeholder="8 haneli müşteri no" maxlength="8">
+        </div>
+        <div class="form-group">
+          <label>Şifre</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+        <div class="form-group">
+          <label>SMS Doğrulama Kodu</label>
+          <input type="text" placeholder="6 haneli kod" maxlength="6">
+        </div>
+        <button type="submit" class="login-btn">Giriş Yap</button>
+      </form>
+      <div class="login-links">
+        <p>Şifrenizi mi unuttunuz? <a href="#">Şifre Sıfırla</a></p>
+        <p style="margin-top:8px">Hesabınız yok mu? <a href="hesaplar.html">Hesap Aç</a></p>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const customerNo = document.querySelector('input[placeholder="8 haneli müşteri no"]').value;
+      const password = document.querySelector('input[placeholder="••••••••"]').value;
+
+      const card = document.querySelector('.login-card');
+
+      // Check for SQLi payload in inputs
+      const sqliPattern = /['"-\/]/; // Simplified SQLi indicator
+      const hasSqli = sqliPattern.test(customerNo) || sqliPattern.test(password) || customerNo.toLowerCase().includes('or') || password.toLowerCase().includes('or');
+
+      if (hasSqli) {
+        // Start simulation
+        card.innerHTML = `
+          <h2 style="color:#ffbb00">⚡ SQL ENJEKSİYON TETİKLENDİ</h2>
+          <p class="login-subtitle" style="color:#aaa">Bypass ediliyor...</p>
+          <div id="hack-console" style="background:#050510; border:1px solid #ffbb00; padding:15px; border-radius:6px; color:#00ff88; font-family:monospace; font-size:12px; text-align:left; min-height:150px; overflow-y:auto; margin-bottom:15px;">
+            <div>[+] SQLi payload tespit edildi.</div>
+          </div>
+        `;
+
+        const consoleEl = document.getElementById('hack-console');
+        const steps = [
+          { text: '[+] Parametre enjeksiyonu doğrulanıyor...', delay: 400 },
+          { text: "[+] UNION query oluşturuldu...", delay: 800 },
+          { text: "[+] Veritabanı cevap verdi: MySQL 8.0.25", delay: 1200 },
+          { text: "[+] Tablolar listeleniyor: users, accounts, logs...", delay: 1600 },
+          { text: "[✓] Giriş koruması devre dışı bırakıldı! Admin oturumu aktif.", delay: 2000 }
+        ];
+
+        steps.forEach(step => {
+          setTimeout(() => {
+            const div = document.createElement('div');
+            div.textContent = step.text;
+            consoleEl.appendChild(div);
+          }, step.delay);
+        });
+
+        setTimeout(() => {
+          card.innerHTML = `
+            <h2 style="color:#00ff88">🏆 SQLi BAŞARILI!</h2>
+            <p class="login-subtitle">Admin paneline tam erişim sağlandı.</p>
+            <div style="background:#112211; border:1px solid #00ff88; padding:20px; border-radius:6px; color:#fff; text-align:center; margin-bottom:20px;">
+              <div style="font-size:24px; margin-bottom:10px;">🏦</div>
+              <div style="font-size:14px; font-weight:bold; color:#00ff88;">HedefBank Yönetici Konsolu</div>
+              <div style="font-size:12px; color:#888; margin-top:5px;">Müşteri Hesap Veritabanı (2.4M kayıt)</div>
+            </div>
+            <button id="dump-btn" class="login-btn" style="background:#00ff88; color:#000;">Veritabanını Sızdır (Dump - ₿63)</button>
+          `;
+
+          document.getElementById('dump-btn').addEventListener('click', function() {
+            if (window.GameBridge) {
+              window.GameBridge.addMoney(63);
+              window.GameBridge.addSuspicion(15);
+              window.GameBridge.triggerHackSuccess('sqli', 'hedefbank.com.tr', 63);
+              window.GameBridge.notify('🏦 HedefBank Sızıldı', 'SQLi ile veritabanı dump edildi. +₿63 eklendi!');
+
+              card.innerHTML = `
+                <h2 style="color:#00ff88">✓ VERİ SIZDIRILDI</h2>
+                <p class="login-subtitle">İşlem başarıyla tamamlandı. Loglar temizleniyor.</p>
+                <div style="font-size:13px; color:#888; margin-top:20px;">Tarayıcıyı kapatıp terminale dönebilirsiniz.</div>
+              `;
+            } else {
+              alert('GameBridge bulunamadı.');
+            }
+          });
+        }, 2500);
+
+      } else {
+        alert('Hata: Müşteri numarası veya şifre yanlış. (Zafiyet Koruması: SQLi)');
+      }
+    });
+  </script>
+</body>
+</html>

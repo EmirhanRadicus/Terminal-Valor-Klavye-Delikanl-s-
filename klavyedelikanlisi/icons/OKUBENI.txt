@@ -1,0 +1,40 @@
+=============================================
+  OYUN İKONLARI — Özelleştirme Rehberi
+=============================================
+
+Bu klasördeki her .png dosyası, oyun masaüstündeki
+bir uygulama ikonunu temsil eder.
+
+NASIL DEĞİŞTİRİRİM?
+--------------------
+1. Değiştirmek istediğin ikonun dosyasını SİL
+   (örn: terminal.png)
+
+2. Kendi görselini AYNI ISIMDE buraya koy
+   (örn: terminal.png  veya  terminal.jpg)
+
+3. Oyunu yeniden aç (F5) — görsel otomatik
+   yüklenir, uygun ölçekte kırpılır.
+
+DOSYA İSİMLERİ
+--------------
+terminal.png    → Terminal uygulaması
+browser.png     → Web Tarayıcı
+notepad.png     → Not Defteri
+messenger.png   → Mesajlar
+guide.png       → Sıfırdan Hacker rehberi
+tor.png         → Tor Browser
+skilltree.png   → Yetenek Ağacı
+settings.png    → Ayarlar
+missions.png    → Broker Görevleri
+save.png        → Kaydet
+sleep.png       → Uyu
+start.png       → Başlat butonu
+
+DESTEKLENEN FORMATLAR
+---------------------
+.png  .jpg  .jpeg  .webp
+
+NOT: Görsel herhangi bir boyutta olabilir.
+Oyun içinde otomatik olarak 48x48 piksel
+ölçeğinde kırpılır (çözünürlük kaybı olmadan).
